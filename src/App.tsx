@@ -23,7 +23,7 @@ const initialJokes: Joke[] = [
   { id: 3, joke: "Why do cows have hooves instead of feet? Because they lactose.", rate: 2 },
   { id: 4, joke: "Parallel lines have so much in common. It’s a shame they’ll never meet.", rate: 5 },
   { id: 5, joke: "My dog stared at me for ten minutes while I ate a sandwich. I offered him a bite. He sneezed on it and walked away. Who's the real alpha now?", rate: 7 },
-  { id: 6, joke: "Tried to organize my inbox... found 12,487 unread emails and decided to just move. New identity, new email.", rate: 1 },
+  { id: 6, joke: "Tried to organize my inbox... found 12,487 unread emails and decided to just move. New identity, new email.", rate: 9 },
 
   { id: 7, joke: "My roommate labeled all his food in the fridge, so I started labeling mine too: 'revenge', 'petty', and 'not yours'.", rate: 5 },
 
