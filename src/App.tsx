@@ -92,7 +92,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>😂 Joke Rating App</h1>
+      <h1>😂 Limo Joke Rating App</h1>
 
       <div style={{ marginBottom: '1rem' }}>
         <textarea
