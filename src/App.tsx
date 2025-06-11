@@ -14,14 +14,23 @@ type Action =
   | { type: 'INCREASE_RATE'; payload: { id: number } }
   | { type: 'DECREASE_RATE'; payload: { id: number } }
   | { type: 'ADD_JOKE'; payload: { joke: string } }
-  | { type: 'DELETE_JOKE'; payload: { id: number } };
+  | { type: 'DELETE_JOKE'; payload: { id: number } }
+  | { type: 'EDIT_JOKE'; payload: { id: number; newJoke: string } };
 
 const initialJokes: Joke[] = [
   { id: 1, joke: "Why don't scientists trust atoms? Because they make up everything.", rate: 3 },
   { id: 2, joke: "I told my computer I needed a break, and it said 'No problem, I’ll go to sleep.'", rate: 4 },
   { id: 3, joke: "Why do cows have hooves instead of feet? Because they lactose.", rate: 2 },
   { id: 4, joke: "Parallel lines have so much in common. It’s a shame they’ll never meet.", rate: 5 },
-  { id: 5, joke: "I'm reading a book on anti-gravity. It's impossible to put down.", rate: 1 }
+  { id: 5, joke: "My dog stared at me for ten minutes while I ate a sandwich. I offered him a bite. He sneezed on it and walked away. Who's the real alpha now?", rate: 7 },
+  { id: 6, joke: "Tried to organize my inbox... found 12,487 unread emails and decided to just move. New identity, new email.", rate: 1 },
+
+  { id: 7, joke: "My roommate labeled all his food in the fridge, so I started labeling mine too: 'revenge', 'petty', and 'not yours'.", rate: 5 },
+
+  { id: 8, joke: "Went on a hike to clear my mind. Got lost, panicked, and now I have 3G and inner peace.", rate: 4 },
+
+  { id: 9, joke: "My printer made a noise like it was about to lift off. All that just to tell me it's out of paper. Dramatic much?", rate: 4 }
+
 ];
 
 function jokeReducer(state: Joke[], action: Action): Joke[] {
@@ -49,7 +58,14 @@ function jokeReducer(state: Joke[], action: Action): Joke[] {
       return [...state, { id: newId, joke: action.payload.joke, rate: 0 }];
 
     case 'DELETE_JOKE':
+      toast.warn('Joke deleted 🗑️');
       return state.filter(joke => joke.id !== action.payload.id);
+
+    case 'EDIT_JOKE':
+      toast.success('Joke updated ✍️');
+      return state.map(joke =>
+        joke.id === action.payload.id ? { ...joke, joke: action.payload.newJoke } : joke
+      );
 
     default:
       return state;
@@ -106,6 +122,8 @@ function App() {
           joke={joke}
           increaseRate={(id) => dispatch({ type: 'INCREASE_RATE', payload: { id } })}
           decreaseRate={(id) => dispatch({ type: 'DECREASE_RATE', payload: { id } })}
+          onDelete={(id) => dispatch({ type: 'DELETE_JOKE', payload: { id } })}
+          onEdit={(id, newJoke) => dispatch({ type: 'EDIT_JOKE', payload: { id, newJoke } })}
         />
       ))}
 
