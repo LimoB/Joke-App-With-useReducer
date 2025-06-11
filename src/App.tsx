@@ -19,14 +19,23 @@ type Action =
 
 const initialJokes: Joke[] = [
   { id: 1, joke: "I asked the librarian if the library had books on paranoia. She whispered, 'They're right behind you...'", rate: 7 },
-  { id: 2, joke: "Why don’t skeletons fight each other? They don’t have the guts.", rate: 5 },
+  { id: 2, joke: "Why are spiders so smart? They can find everything on the web!", rate: 5 },
   { id: 3, joke: "I accidentally wore a red shirt to Target and now I work here.", rate: 6 },
   { id: 4, joke: "I’m not arguing, I’m just explaining why I’m right... loudly and repeatedly.", rate: 8 },
   { id: 5, joke: "Tried cooking last night. The fire alarm was so impressed it gave me a standing ovation.", rate: 9 },
   { id: 6, joke: "I named my dog 'Five Miles' so I can say I walk Five Miles every day.", rate: 4 },
   { id: 7, joke: "Autocorrect has become my worst enema.", rate: 6 },
   { id: 8, joke: "My brain has too many tabs open. And one of them is playing music I can't find.", rate: 8 },
-  { id: 9, joke: "They said 'don’t try this at home'... so I went to my friend’s house.", rate: 7 }
+  { id: 9, joke: "They said 'don’t try this at home'... so I went to my friend’s house.", rate: 7 },
+    { id: 1, joke: "I told my wife she was drawing her eyebrows too high. She looked surprised.", rate: 6 },
+  { id: 2, joke: "Why did the scarecrow win an award? Because he was outstanding in his field.", rate: 5 },
+  { id: 3, joke: "I used to play piano by ear, but now I use my hands.", rate: 7 },
+  { id: 4, joke: "Why don’t eggs tell jokes? They’d crack each other up.", rate: 4 },
+  { id: 5, joke: "I stayed up all night wondering where the sun went. Then it dawned on me.", rate: 6 },
+  { id: 6, joke: "I asked my dog what's two minus two. He said nothing.", rate: 8 },
+  { id: 7, joke: "I’m reading a book about anti-gravity. It’s impossible to put down.", rate: 5 },
+  { id: 8, joke: "Why can’t your nose be 12 inches long? Because then it’d be a foot.", rate: 4 },
+  { id: 9, joke: "I told my plants I love them. Now they won’t stop texting me.", rate: 7 }
 ];
 
 
